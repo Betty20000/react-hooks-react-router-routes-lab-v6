@@ -1,13 +1,28 @@
-import { useEffect, useState } from "react";
+import React from 'react';
 
-function Actors() {
+
+
+function Actors(actors) {
   return (
     <>
       <header>
-        {/* What component should go here? */}
+      nav
       </header>
       <main>
-        {/* Actor info here! */}
+        {actors.map(actor=>(
+          <article key={actor.id}>
+            <h2>{actor.name}</h2>
+
+            <ul>
+              {
+                actor.movies.map((movie, index)=>(
+                  <li key={index}>{movie}</li>
+                  ))
+              }
+            </ul>
+
+          </article>
+        ))}
       </main>
     </>
   );
